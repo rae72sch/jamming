@@ -1,0 +1,29 @@
+.div {
+    font-size: 24px;
+    text-align: center;
+    color: white;
+    padding-top: 40px;
+}
+
+.letters {
+    color: #93B8E5;
+}
+
+.input {
+    width: 200px;
+    height: 30px;
+    text-align: center;
+    font-weight: bold;
+    color: #00587e;
+}
+
+.button {
+    background-color: #00587e;
+    color: white;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: bold;
+    border-radius: 18px;
+    text-decoration: none;
+    border: none;
+}
