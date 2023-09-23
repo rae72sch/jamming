@@ -1,7 +1,7 @@
 import React, {useCallback} from 'react';
 import styles from './Track.module.css';
 
-const Track = (props) => {
+export default function Track(props) {
     const addTrack = useCallback(
         (event) => {
           props.onAdd(props.track);
@@ -29,7 +29,7 @@ const Track = (props) => {
             +
           </button>
         );
-      };
+    };
 
     return (
         <div className={ styles.track }>
@@ -43,5 +43,3 @@ const Track = (props) => {
         </div>
     );
 }
-
-export default Track;
