@@ -1,7 +1,17 @@
-import React from 'react';
+import React, { useState, useCallback } from 'react';
 import styles from './SearchBar.module.css';
 
-export default function SearchBar() {
+export default function SearchBar(props) {
+    const [term, setTerm] = useState("");
+
+  const handleTermChange = useCallback((event) => {
+    setTerm(event.target.value);
+  }, []);
+
+  const search = useCallback(() => {
+    props.onSearch(term);
+  }, [props.onSearch, term]);
+
     return (
         <div className={ styles.div }>
             <h1>Ja
@@ -10,8 +20,12 @@ export default function SearchBar() {
             </h1>
             <br />
             <form>
-                <input id="search" name="search" type="text" value="Enter A Song Title" className={ styles.input } /> <br /><br />
-                <input name="submit" type="submit"  value="Search" className={ styles.button } />
+                <input placeholder="Enter A Song Title" className={ styles.input } onChange={handleTermChange} />
+                <p>
+                    <button className={ styles.button } onClick={search}>
+                        SEARCH
+                    </button>
+                </p>
             </form>
         </div>       
     )
